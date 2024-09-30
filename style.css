@@ -52,6 +52,7 @@ section {
 
 h2 {
     font-size: 2em;
+    font-weight: 250;
     color: #004080; /* Dark Blue */
     margin-bottom: 20px;
     border-bottom: 3px solid #ddd;
