@@ -4,7 +4,7 @@ title: Shayan Shokri
 ---
 # About Me
 Hello! I'm currently a PhD student at The Graduate Center, CUNY. My PhD degree is in computer science with a focus on natural language 
-processing (NLP) advised by Dr. Sarah Ita Levitan.
+processing (NLP) advised by [Dr. Sarah Ita Levitan](http://www.cs.columbia.edu/~sarahita/).
 
 Before joining a PhD program, I graduated from Sharif University of Technology, Tehran, Iran, with a bachelor's degree in computer engineering.
 
