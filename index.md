@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Shayan Shokri
 ---
 # About Me
 Hello! I'm currently a PhD student at The Graduate Center, CUNY. My PhD degree is in computer science with a focus on natural language 
