@@ -36,7 +36,7 @@ header {
     margin: 0 auto 15px; /* Center the image */
 }
 
-body .main-content h1 {
+body .main-content h2 {
     text-align: center;
     font-size: 1.8em; /* Increase font size for visibility */
     font-weight: 200;
