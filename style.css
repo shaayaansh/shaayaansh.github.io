@@ -79,18 +79,21 @@ h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em; /* Example size */
     font-weight: 200; /* Light weight */
+    color: rgb(0, 35, 75);
 }
 
 h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3em; /* Example size */
     font-weight: 200; /* Light weight */
+    color: rgb(0, 35, 75);
 }
 
 h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1em; /* Example size */
     font-weight: 200; /* Light weight */
+    color: rgb(0, 35, 75);
 }
 
 /* Other styles remain unchanged */
