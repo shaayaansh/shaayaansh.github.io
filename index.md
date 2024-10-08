@@ -18,9 +18,9 @@ various tasks.
 
 # Projects
 
-Detecting Subjective Language in News
-Zero-shot Stance Detection in News and Social Media
-Sensitive Narrative Analysis: Finding Common Patterns in Stories of Domestic Violence
+- Detecting Subjective Language in News
+- Zero-shot Stance Detection in News and Social Media
+- Sensitive Narrative Analysis: Finding Common Patterns in Stories of Domestic Violence
 
 # Publications
 
@@ -29,3 +29,10 @@ View all on Google Scholar
 - Analysis of Propaganda in Tweets From Politically Biased Sources (2024)
 - [Defining and Controlling Information Leakage in US Equities Trading](https://petsymposium.org/popets/2024/popets-2024-0054.pdf) (2024)
 - [GC-Hunter at Image-Arg Shared Task: Multi-Modal Stance and Persuasiveness Learning](https://aclanthology.org/2023.argmining-1.17.pdf) (2023)
+
+# Interest
+Aside from my research, I'm very interested in reading, watching good movies/shows, playing tennis and football, listening to podcasts, and ofcourse 
+traveling!
+
+- Check out the books I've read [here](https://www.goodreads.com/review/list/118658467?shelf=read)
+- Check out the films I've watched [here](https://letterboxd.com/shayansh96/films/)
