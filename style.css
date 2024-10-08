@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -73,18 +75,21 @@ section {
 }
 
 h1 {
+    font-family: 'Roboto';
     font-size: 1.5em; /* Example size */
-    font-weight: 300; /* Light weight */
+    font-weight: 200; /* Light weight */
 }
 
 h2 {
+    font-family: 'Roboto';
     font-size: 1.3em; /* Example size */
-    font-weight: 300; /* Light weight */
+    font-weight: 200; /* Light weight */
 }
 
 h3 {
+    font-family: 'Roboto';
     font-size: 1.1em; /* Example size */
-    font-weight: 300; /* Light weight */
+    font-weight: 200; /* Light weight */
 }
 
 /* Other styles remain unchanged */
