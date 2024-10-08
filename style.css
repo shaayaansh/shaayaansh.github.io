@@ -74,20 +74,20 @@ section {
     max-width: 900px;
 }
 
-h1 {
-    font-family: 'Roboto';
+body h1 {
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5em; /* Example size */
     font-weight: 200; /* Light weight */
 }
 
-h2 {
-    font-family: 'Roboto';
+body h2 {
+    font-family: 'Roboto', sans-serif;
     font-size: 1.3em; /* Example size */
     font-weight: 200; /* Light weight */
 }
 
-h3 {
-    font-family: 'Roboto';
+body h3 {
+    font-family: 'Roboto', sans-serif;
     font-size: 1.1em; /* Example size */
     font-weight: 200; /* Light weight */
 }
