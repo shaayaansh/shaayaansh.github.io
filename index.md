@@ -25,7 +25,7 @@ Sensitive Narrative Analysis: Finding Common Patterns in Stories of Domestic Vio
 # Publications
 
 View all on Google Scholar
-Subjectivity Detection in News Domain using Large Language Models (2024)
-Analysis of Propaganda in Tweets From Politically Biased Sources (2024)
-Defining and Controlling Information Leakage in US Equities Trading (2024)
-GC-Hunter at Image-Arg Shared Task: Multi-Modal Stance and Persuasiveness Learning (2023)
+- [Subjectivity Detection in News Domain using Large Language Models](https://aclanthology.org/2024.wassa-1.17.pdf) (2024)
+- Analysis of Propaganda in Tweets From Politically Biased Sources (2024)
+- [Defining and Controlling Information Leakage in US Equities Trading](https://petsymposium.org/popets/2024/popets-2024-0054.pdf) (2024)
+- [GC-Hunter at Image-Arg Shared Task: Multi-Modal Stance and Persuasiveness Learning](https://aclanthology.org/2023.argmining-1.17.pdf) (2023)
