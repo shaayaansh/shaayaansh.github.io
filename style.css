@@ -72,4 +72,19 @@ section {
     max-width: 900px;
 }
 
+h1 {
+    font-size: 1.5em; /* Example size */
+    font-weight: 300; /* Light weight */
+}
+
+h2 {
+    font-size: 1.3em; /* Example size */
+    font-weight: 300; /* Light weight */
+}
+
+h3 {
+    font-size: 1.1em; /* Example size */
+    font-weight: 300; /* Light weight */
+}
+
 /* Other styles remain unchanged */
