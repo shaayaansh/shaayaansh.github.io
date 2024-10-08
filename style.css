@@ -17,9 +17,9 @@ header {
 
 .sidebar {
   height: 100vh;
-  width: 250px; /* Increased width */
+  width: 350px; /* Increased width */
   position: fixed;
-  background-color: #333;
+  background-color: #233;
   padding-top: 20px;
   color: #fff;
   display: flex; /* Added for flexbox */
