@@ -31,14 +31,14 @@ header {
 
 .sidebar .headshot {
     width: 150px; /* Adjust width if desired */
-    height: 200px; /* Adjust height if desired */
-    border-radius: 50%;
+    height: 180px; /* Adjust height if desired */
+    border-radius: 80%;
     margin: 0 auto 15px; /* Center the image */
 }
 
 body .sidebar h1 {
     text-align: center;
-    font-size: 1.5em; /* Increase font size for visibility */
+    font-size: 1.8em; /* Increase font size for visibility */
     font-weight: 200;
     margin: 10px 0; /* Add margin for spacing */
 }
