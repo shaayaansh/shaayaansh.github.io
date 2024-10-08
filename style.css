@@ -39,6 +39,7 @@ header {
 body .sidebar h1 {
     text-align: center;
     font-size: 1.5em; /* Increase font size for visibility */
+    font-weight: 200;
     margin: 10px 0; /* Add margin for spacing */
 }
 
@@ -74,19 +75,19 @@ section {
     max-width: 900px;
 }
 
-body h1 {
+h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em; /* Example size */
     font-weight: 200; /* Light weight */
 }
 
-body h2 {
+h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3em; /* Example size */
     font-weight: 200; /* Light weight */
 }
 
-body h3 {
+h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1em; /* Example size */
     font-weight: 200; /* Light weight */
