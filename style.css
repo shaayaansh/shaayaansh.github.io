@@ -17,9 +17,9 @@ header {
 
 body .sidebar {
     height: 100vh;
-    width: 400px; /* Sidebar width */
+    width: 300px; /* Sidebar width */
     position: fixed;
-    background-color: rgba(0,80,138,0.5);;
+    background-color: rgba(0,80,238,0.5);;
     padding-top: 40px; /* Space above for centering */
     color: #fff;
     display: flex;
