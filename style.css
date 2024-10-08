@@ -17,9 +17,9 @@ header {
 
 body .sidebar {
     height: 100vh;
-    width: 450px; /* Sidebar width */
+    width: 400px; /* Sidebar width */
     position: fixed;
-    background-color: #200;
+    background-color: rgba(0,80,138,0.5);;
     padding-top: 40px; /* Space above for centering */
     color: #fff;
     display: flex;
@@ -27,9 +27,9 @@ body .sidebar {
     align-items: center;
 }
 
-.headshot {
+body .sidebar .headshot {
     width: 150px; /* Adjust width if desired */
-    height: 150px; /* Adjust height if desired */
+    height: 200px; /* Adjust height if desired */
     border-radius: 50%;
     margin: 0 auto 15px; /* Center the image */
 }
