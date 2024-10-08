@@ -32,7 +32,9 @@ header {
 .sidebar .headshot {
     width: 150px; /* Adjust width if desired */
     height: 180px; /* Adjust height if desired */
-    border-radius: 80%;
+    /*border-radius: 80%;*/
+    border: 3px solid white;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adjust values for intensity */
     margin: 0 auto 15px; /* Center the image */
 }
 
