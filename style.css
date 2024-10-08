@@ -15,7 +15,7 @@ header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-body .sidebar {
+.sidebar {
     height: 100vh;
     width: 300px; /* Sidebar width */
     position: fixed;
@@ -27,7 +27,7 @@ body .sidebar {
     align-items: center;
 }
 
-body .sidebar .headshot {
+.sidebar .headshot {
     width: 150px; /* Adjust width if desired */
     height: 200px; /* Adjust height if desired */
     border-radius: 50%;
