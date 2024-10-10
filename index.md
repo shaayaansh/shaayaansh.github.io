@@ -1,5 +1,7 @@
 ---
+
 layout: default
+![My profile picture](assets/profile.jpeg)
 title: Shayan Shokri
 ---
 # About Me
