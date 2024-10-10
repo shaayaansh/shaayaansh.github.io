@@ -1,9 +1,10 @@
 ---
 
 layout: default
-![My profile picture](assets/profile.jpeg)
 title: Shayan Shokri
+
 ---
+![My profile picture](assets/profile.jpeg)
 # About Me
 Hello! I'm currently a PhD student at The Graduate Center, CUNY. My PhD degree is in computer science with a focus on natural language 
 processing (NLP) advised by [Dr. Sarah Ita Levitan](http://www.cs.columbia.edu/~sarahita/).
