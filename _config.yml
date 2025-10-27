@@ -1,3 +1,17 @@
 title: Shayan Shokri
-description: 
-theme: jekyll-theme-cayman
+description: PhD Student | Natural Language Processing | Machine Learning
+author: Shayan Shokri
+url: "https://shaayaansh.github.io"
+
+# Profile picture
+logo: /profile.jpg
+
+# Social links (update these with your actual usernames)
+github_username: shaayaansh
+linkedin_username: https://www.linkedin.com/in/shayanshokri96/
+google_scholar: o0OKC_oAAAAJ
+
+# Remove or comment out the theme line
+# theme: jekyll-theme-cayman
+
+lang: en-US
