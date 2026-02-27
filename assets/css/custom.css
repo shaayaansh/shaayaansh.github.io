@@ -303,7 +303,7 @@ body {
 }
 
 .content.is-stacked .deck-spacer {
-  height: 160dvh;
+  height: var(--deck-spacer-height, 160dvh);
 }
 
 .content.is-stacked .stack-card {
@@ -311,7 +311,7 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  height: var(--deck-card-height, 68dvh);
+  height: auto;
   z-index: 1;
   padding: 1.35rem 1.3rem 1.05rem;
   background: linear-gradient(168deg, rgba(241, 249, 244, 0.985), rgba(232, 243, 236, 0.93));
@@ -322,6 +322,8 @@ body {
     0 2px 0 rgba(255, 255, 255, 0.5) inset;
   transform-origin: 50% 10%;
   will-change: transform, opacity;
+  overflow: hidden;
+  display: block;
 }
 
 .content.is-stacked .stack-card + .stack-card {

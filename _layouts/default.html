@@ -116,6 +116,33 @@
         const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
         const smoothstep = (t) => t * t * (3 - (2 * t));
         const isDesktop = () => window.matchMedia("(min-width: 941px)").matches;
+        let cardHeights = [];
+        let segmentStarts = [];
+        let segmentLengths = [];
+        let totalTravel = 0;
+
+        const computeMetrics = () => {
+          const vh = window.innerHeight;
+          cardHeights = cards.map((card) => {
+            const prevTransform = card.style.transform;
+            card.style.transform = "none";
+            const h = Math.ceil(card.offsetHeight);
+            card.style.transform = prevTransform;
+            return h;
+          });
+
+          segmentStarts = [];
+          segmentLengths = [];
+          totalTravel = 0;
+          for (let i = 0; i < cards.length - 1; i += 1) {
+            segmentStarts.push(totalTravel);
+            const travelOut = cardHeights[i] + 140;
+            segmentLengths.push(travelOut);
+            totalTravel += travelOut;
+          }
+          segmentStarts.push(totalTravel);
+          stack.style.setProperty("--deck-spacer-height", `${Math.max(window.innerHeight * 0.9, totalTravel + window.innerHeight)}px`);
+        };
 
         let ticking = false;
         const render = () => {
@@ -123,40 +150,52 @@
 
           if (!isDesktop()) {
             cards.forEach((card) => {
-              card.style.transform = "";
-              card.style.opacity = "";
-            });
-            const firstId = cards[0]?.dataset.sectionId;
-            if (firstId) setActiveById(firstId);
-            spacer.style.height = "0px";
-            return;
+                card.style.transform = "";
+                card.style.opacity = "";
+              });
+              const firstId = cards[0]?.dataset.sectionId;
+              if (firstId) setActiveById(firstId);
+              spacer.style.height = "0px";
+              return;
+            }
+
+          if (!segmentLengths.length) computeMetrics();
+          const vh = window.innerHeight;
+          const travel = clamp(Math.max(0, -stack.getBoundingClientRect().top), 0, totalTravel);
+
+          let phase = 0;
+          for (let i = 0; i < segmentStarts.length - 1; i += 1) {
+            if (travel >= segmentStarts[i] && travel <= segmentStarts[i] + segmentLengths[i]) {
+              phase = i;
+              break;
+            }
+            if (travel > segmentStarts[i] + segmentLengths[i]) phase = i + 1;
           }
 
-          const vh = window.innerHeight;
-          const cardHeight = Math.min(vh * 0.7, 620);
-          const step = cardHeight * 0.9;
-          const travel = Math.max(0, -stack.getBoundingClientRect().top);
-          const progress = clamp(travel / step, 0, (cards.length - 1) + 0.999);
-          const phase = Math.floor(progress);
-          const local = progress - phase;
+          const segmentStart = segmentStarts[Math.min(phase, segmentStarts.length - 1)];
+          const segmentLength = segmentLengths[Math.min(phase, segmentLengths.length - 1)] || 1;
+          const local = clamp((travel - segmentStart) / segmentLength, 0, 1);
           const eased = smoothstep(local);
-          const centerY = (vh - cardHeight) / 2;
 
-          stack.style.setProperty("--deck-card-height", `${cardHeight}px`);
-          spacer.style.height = `${Math.max(vh, ((cards.length - 1) * step) + vh)}px`;
+          const getBaseY = (height) => {
+            if (height >= (vh * 0.82)) return 18;
+            return Math.max(18, (vh - height) / 2);
+          };
 
           cards.forEach((card, index) => {
+            const h = cardHeights[index] || card.offsetHeight;
+            const baseY = getBaseY(h);
             let x = 0;
             let y = 0;
             let scale = 1;
             let opacity = 1;
 
             if (index < phase) {
-              y = -cardHeight - 96;
+              y = -h - 140;
               x = -4;
               scale = 0.98;
             } else if (index === phase) {
-              y = -(cardHeight + 96) * eased;
+              y = (-(h + 140)) * eased;
               x = -6 * eased;
               scale = 1 - (0.015 * eased);
             } else if (index === phase + 1) {
@@ -171,7 +210,7 @@
               opacity = Math.max(0.65, 1 - (depth * 0.1));
             }
 
-            card.style.transform = `translate3d(${x}px, ${centerY + y}px, 0) scale(${scale})`;
+            card.style.transform = `translate3d(${x}px, ${baseY + y}px, 0) scale(${scale})`;
             card.style.opacity = String(opacity);
           });
 
@@ -186,8 +225,12 @@
         };
 
         window.addEventListener("scroll", requestRender, { passive: true });
-        window.addEventListener("resize", requestRender);
+        window.addEventListener("resize", () => {
+          computeMetrics();
+          requestRender();
+        });
         window.addEventListener("load", requestRender);
+        computeMetrics();
         requestRender();
       })();
     </script>
