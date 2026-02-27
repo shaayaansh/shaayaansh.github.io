@@ -311,9 +311,10 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  height: auto;
+  height: var(--deck-card-height, 70vh);
+  max-height: var(--deck-card-height, 70vh);
   z-index: 1;
-  padding: 1.35rem 1.3rem 1.05rem;
+  padding: 0;
   background: linear-gradient(168deg, rgba(241, 249, 244, 0.985), rgba(232, 243, 236, 0.93));
   border: 1px solid rgba(18, 67, 47, 0.2);
   border-radius: 16px;
@@ -324,6 +325,15 @@ body {
   will-change: transform, opacity;
   overflow: hidden;
   display: block;
+}
+
+.content.is-stacked .stack-card-content {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: block;
+  padding: 1.35rem 1.3rem 1.05rem;
+  overscroll-behavior: contain;
 }
 
 .content.is-stacked .stack-card + .stack-card {
@@ -592,10 +602,16 @@ body {
     inset: auto;
     margin-top: 0;
     margin-bottom: 0.85rem;
-    padding: 1rem 0.9rem 0.92rem;
+    padding: 0;
     transform: none !important;
     opacity: 1 !important;
     z-index: auto !important;
+  }
+
+  .content.is-stacked .stack-card-content {
+    height: auto;
+    overflow: visible;
+    padding: 1rem 0.9rem 0.92rem;
   }
 
   .site-name {
