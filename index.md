@@ -25,52 +25,52 @@ I am especially interested in machine learning and large language models, with e
 {: #publications}
 <div class="pub-list">
   <article class="pub-item">
-    <h3 class="pub-title">Story2MIDI: Emotionally Aligned Music Generation from Text</h3>
+    <h3 class="pub-title"><a href="https://arxiv.org/abs/2512.02192" target="_blank" rel="noopener noreferrer">Story2MIDI: Emotionally Aligned Music Generation from Text</a></h3>
     <p class="pub-authors">M Shokri, AC Salem, G Levine, J Devaney, SI Levitan</p>
     <p class="pub-meta">arXiv preprint arXiv:2512.02192 (2025)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Chord-conditioned melody and bass generation</h3>
+    <h3 class="pub-title"><a href="https://arxiv.org/abs/2511.08755" target="_blank" rel="noopener noreferrer">Chord-conditioned melody and bass generation</a></h3>
     <p class="pub-authors">AC Salem, M Shokri, J Devaney</p>
     <p class="pub-meta">arXiv preprint arXiv:2511.08755 (2025)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Personalized Author Obfuscation with Large Language Models</h3>
+    <h3 class="pub-title"><a href="https://aclanthology.org/2025.ranlp-1.133/" target="_blank" rel="noopener noreferrer">Personalized Author Obfuscation with Large Language Models</a></h3>
     <p class="pub-authors">M Shokri, SI Levitan, R Levitan</p>
     <p class="pub-meta">Proceedings of the 15th International Conference on Recent Advances in Natural Language Processing (2025)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Analysis of Propaganda in Tweets From Politically Biased Sources</h3>
+    <h3 class="pub-title"><a href="https://journals.flvc.org/FLAIRS/article/view/138948" target="_blank" rel="noopener noreferrer">Analysis of Propaganda in Tweets From Politically Biased Sources</a></h3>
     <p class="pub-authors">V Sharma, MM Shokri, SI Levitan, E Filatova, S Jain</p>
     <p class="pub-meta">arXiv preprint arXiv:2507.08169 (2025)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Propasafe: A bert-based offline tool for propaganda detection</h3>
+    <h3 class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3701716.3715195" target="_blank" rel="noopener noreferrer">Propasafe: A bert-based offline tool for propaganda detection</a></h3>
     <p class="pub-authors">V Sharma, MM Shokri, S Jain, SI Levitan, E Filatova</p>
     <p class="pub-meta">Companion Proceedings of the ACM Web Conference (2025)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Finding Common Patterns in Domestic Violence Stories Posted on Reddit</h3>
+    <h3 class="pub-title"><a href="https://aclanthology.org/2025.wnu-1.2/" target="_blank" rel="noopener noreferrer">Finding Common Patterns in Domestic Violence Stories Posted on Reddit</a></h3>
     <p class="pub-authors">M Shokri, E Klapper, J Shan, SI Levitan</p>
     <p class="pub-meta">Proceedings of the 7th Workshop on Narrative Understanding (2025)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Is it safe to tell your story? towards achieving privacy for sensitive narratives</h3>
+    <h3 class="pub-title"><a href="https://aclanthology.org/2024.wnu-1.7/" target="_blank" rel="noopener noreferrer">Is it safe to tell your story? towards achieving privacy for sensitive narratives</a></h3>
     <p class="pub-authors">M Shokri, A Bishop, SI Levitan</p>
     <p class="pub-meta">Proceedings of the 6th Workshop on Narrative Understanding (2024)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Subjectivity Detection in English News Using Large Language Models</h3>
+    <h3 class="pub-title"><a href="https://aclanthology.org/2024.wassa-1.17/" target="_blank" rel="noopener noreferrer">Subjectivity Detection in English News Using Large Language Models</a></h3>
     <p class="pub-authors">M Shokri, V Sharma, E Filatova, S Jain, S Levitan</p>
     <p class="pub-meta">Proceedings of the 14th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis (2024)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">Defining and controlling information leakage in us equities trading</h3>
+    <h3 class="pub-title"><a href="https://petsymposium.org/popets/2024/popets-2024-0054.php" target="_blank" rel="noopener noreferrer">Defining and controlling information leakage in us equities trading</a></h3>
     <p class="pub-authors">A Americo, A Bishop, P Cesaretti, G Grogan, A McKoy, RN Moss, L Oakley, et al.</p>
     <p class="pub-meta">Proceedings on Privacy Enhancing Technologies (2024)</p>
   </article>
   <article class="pub-item">
-    <h3 class="pub-title">GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning</h3>
+    <h3 class="pub-title"><a href="https://aclanthology.org/2023.argmining-1.17/" target="_blank" rel="noopener noreferrer">GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning</a></h3>
     <p class="pub-authors">M Shokri, SI Levitan</p>
     <p class="pub-meta">Proceedings of the 10th Workshop on Argument Mining (2023)</p>
   </article>
