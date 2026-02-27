@@ -169,23 +169,24 @@
             let y = 0;
             let scale = 1;
             let opacity = 1;
+            const depthLayer = Math.max(0, index - phase);
 
             if (index < phase) {
               y = -cardHeight - 130;
-              x = -4;
+              x = 0;
               scale = 0.98;
             } else if (index === phase) {
               y = (-(cardHeight + 130)) * eased;
-              x = -6 * eased;
+              x = 0;
               scale = 1 - (0.015 * eased);
             } else if (index === phase + 1) {
               y = 28 * (1 - eased);
-              x = -18 * (1 - eased);
+              x = -22;
               scale = 0.975 + (0.025 * eased);
             } else {
               const depth = index - (phase + 1);
               y = 28 + (depth * 18);
-              x = -18 - (depth * 14);
+              x = -22 * depthLayer;
               scale = Math.max(0.88, 0.975 - (depth * 0.03));
               opacity = Math.max(0.65, 1 - (depth * 0.1));
             }
