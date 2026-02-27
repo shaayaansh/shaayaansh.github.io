@@ -330,7 +330,7 @@ body {
   gap: 1.05rem;
   margin: 0.65rem 0 0.6rem;
   position: relative;
-  padding-left: 5.7rem;
+  padding-left: 9.8rem;
 }
 
 .experience-list::before {
@@ -357,9 +357,9 @@ body {
 .experience-item::before {
   content: "";
   position: absolute;
-  left: -4.5rem;
+  left: -8.55rem;
   top: 1.05rem;
-  width: 3.95rem;
+  width: 7.9rem;
   height: 1.18rem;
   border-left: 3px solid #15573d;
   border-bottom: 3px solid #15573d;
@@ -368,8 +368,8 @@ body {
 
 .experience-branch-date {
   position: absolute;
-  left: -3.95rem;
-  top: 0.08rem;
+  left: -6.95rem;
+  top: 0.16rem;
   font-size: 0.7rem;
   line-height: 1.2;
   color: rgba(20, 71, 50, 0.7);
