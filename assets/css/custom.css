@@ -358,8 +358,11 @@ body {
 }
 
 .content.is-stacked .stack-card.is-active-card .stack-card-body {
-  overflow-y: auto;
   pointer-events: auto;
+}
+
+.content.is-stacked .stack-card.is-settled-card .stack-card-body {
+  overflow-y: auto;
 }
 
 .content.is-stacked .stack-card-body::-webkit-scrollbar {
