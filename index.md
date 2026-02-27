@@ -5,9 +5,9 @@ title: Shayan Shokri
 
 # About Me
 {: #about-me}
-I am a PhD student in Computer Science at The Graduate Center, CUNY, focusing on natural language processing (NLP). I am advised by [Dr. Sarah Ita Levitan](http://www.cs.columbia.edu/~sarahita/).
+I'm a Computer Science PhD candidate studying how machines understand language, narratives, and meaning.
 
-Before starting my PhD, I earned a bachelor's degree in Computer Engineering from Sharif University of Technology in Tehran, Iran.
+My work spans natural language processing, multimodal systems, and representation learning. I'm particularly drawn to problems where structure matters: aligning sequences, modeling latent signals, understanding robustness, and designing systems that behave reliably under distribution shifts. I enjoy thinking about the mechanics behind learning systems - how objectives shape behavior, how representations encode bias, and how small modeling decisions scale into large effects.
 
 # Research Interests
 {: #research-interests}
@@ -23,16 +23,58 @@ I am especially interested in machine learning and large language models, with e
 
 # Publications
 {: #publications}
-- Story2MIDI: Emotionally Aligned Music Generation from Text
-- Chord-conditioned melody and bass generation
-- Personalized Author Obfuscation with Large Language Models
-- Analysis of Propaganda in Tweets From Politically Biased Sources
-- Propasafe: A bert-based offline tool for propaganda detection
-- Finding Common Patterns in Domestic Violence Stories Posted on Reddit
-- Is it safe to tell your story? towards achieving privacy for sensitive narratives
-- Subjectivity Detection in English News Using Large Language Models
-- Defining and controlling information leakage in us equities trading
-- GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning
+<div class="pub-list">
+  <article class="pub-item">
+    <h3 class="pub-title">Story2MIDI: Emotionally Aligned Music Generation from Text</h3>
+    <p class="pub-authors">M Shokri, AC Salem, G Levine, J Devaney, SI Levitan</p>
+    <p class="pub-meta">arXiv preprint arXiv:2512.02192 (2025)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Chord-conditioned melody and bass generation</h3>
+    <p class="pub-authors">AC Salem, M Shokri, J Devaney</p>
+    <p class="pub-meta">arXiv preprint arXiv:2511.08755 (2025)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Personalized Author Obfuscation with Large Language Models</h3>
+    <p class="pub-authors">M Shokri, SI Levitan, R Levitan</p>
+    <p class="pub-meta">Proceedings of the 15th International Conference on Recent Advances in Natural Language Processing (2025)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Analysis of Propaganda in Tweets From Politically Biased Sources</h3>
+    <p class="pub-authors">V Sharma, MM Shokri, SI Levitan, E Filatova, S Jain</p>
+    <p class="pub-meta">arXiv preprint arXiv:2507.08169 (2025)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Propasafe: A bert-based offline tool for propaganda detection</h3>
+    <p class="pub-authors">V Sharma, MM Shokri, S Jain, SI Levitan, E Filatova</p>
+    <p class="pub-meta">Companion Proceedings of the ACM Web Conference (2025)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Finding Common Patterns in Domestic Violence Stories Posted on Reddit</h3>
+    <p class="pub-authors">M Shokri, E Klapper, J Shan, SI Levitan</p>
+    <p class="pub-meta">Proceedings of the 7th Workshop on Narrative Understanding (2025)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Is it safe to tell your story? towards achieving privacy for sensitive narratives</h3>
+    <p class="pub-authors">M Shokri, A Bishop, SI Levitan</p>
+    <p class="pub-meta">Proceedings of the 6th Workshop on Narrative Understanding (2024)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Subjectivity Detection in English News Using Large Language Models</h3>
+    <p class="pub-authors">M Shokri, V Sharma, E Filatova, S Jain, S Levitan</p>
+    <p class="pub-meta">Proceedings of the 14th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis (2024)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">Defining and controlling information leakage in us equities trading</h3>
+    <p class="pub-authors">A Americo, A Bishop, P Cesaretti, G Grogan, A McKoy, RN Moss, L Oakley, et al.</p>
+    <p class="pub-meta">Proceedings on Privacy Enhancing Technologies (2024)</p>
+  </article>
+  <article class="pub-item">
+    <h3 class="pub-title">GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning</h3>
+    <p class="pub-authors">M Shokri, SI Levitan</p>
+    <p class="pub-meta">Proceedings of the 10th Workshop on Argument Mining (2023)</p>
+  </article>
+</div>
 
 Full list on [Google Scholar](https://scholar.google.com/citations?user=o0OKC_oAAAAJ).
 

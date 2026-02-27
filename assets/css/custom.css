@@ -126,6 +126,34 @@ body {
   letter-spacing: -0.03em;
   line-height: 1.16;
   color: #eefaf3;
+  font-weight: 300;
+}
+
+.site-email {
+  margin: 0.2rem 0 0.7rem;
+  text-align: right;
+  font-family:
+    "SF Pro Text",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+.site-email a {
+  color: rgba(216, 239, 225, 0.95);
+  text-decoration: none;
+}
+
+.site-email a:hover,
+.site-email a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .tagline {
@@ -281,6 +309,68 @@ body {
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
+}
+
+.pub-list {
+  display: grid;
+  gap: 0.82rem;
+  margin: 0.7rem 0 0.55rem;
+}
+
+.pub-item {
+  border-bottom: 1px solid rgba(21, 60, 44, 0.12);
+  padding-bottom: 0.62rem;
+}
+
+.pub-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pub-title {
+  margin: 0;
+  font-family:
+    "SF Pro Text",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.42;
+  font-weight: 500;
+  color: #0f6a49;
+}
+
+.pub-authors {
+  margin: 0.18rem 0 0;
+  font-family:
+    "SF Pro Text",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.36;
+  color: rgba(28, 59, 46, 0.68);
+}
+
+.pub-meta {
+  margin: 0.12rem 0 0;
+  font-family:
+    "SF Pro Text",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.32;
+  color: rgba(22, 50, 38, 0.58);
 }
 
 .site-footer {

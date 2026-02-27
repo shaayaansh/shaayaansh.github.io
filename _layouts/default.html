@@ -18,8 +18,10 @@
           {% if site.logo %}
           <img src="{{ site.logo | relative_url }}" alt="{{ site.author | default: site.title }}" class="profile-image">
           {% endif %}
-            <p class="eyebrow">Personal Website</p>
             <h1 class="site-name">{{ site.title }}</h1>
+            {% if site.email %}
+            <p class="site-email"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            {% endif %}
             <p class="tagline">{{ site.description }}</p>
             <nav class="social-links" aria-label="Social links">
             {% if site.github_username %}
