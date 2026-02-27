@@ -90,7 +90,7 @@ body {
   padding: 1rem;
   z-index: 3;
   overflow-y: auto;
-  background: linear-gradient(90deg, #0a241b 0%, #103126 75%, rgba(26, 81, 57, 0.96) 100%);
+  background: transparent;
 }
 
 .sidebar-card {
@@ -232,11 +232,8 @@ body {
   margin-left: 416px;
   padding: 0;
   min-height: 100dvh;
-  background:
-    radial-gradient(circle at 82% 14%, rgba(101, 170, 136, 0.26) 0%, transparent 30%),
-    radial-gradient(circle at 94% 90%, rgba(71, 142, 109, 0.2) 0%, transparent 36%),
-    linear-gradient(90deg, #0b251c 0%, #133a2b 50%, #1c5a40 100%);
-  border-left: 1px solid rgba(23, 72, 53, 0.16);
+  background: transparent;
+  border-left: 0;
 }
 
 .content {
@@ -304,7 +301,7 @@ body {
   --card-top: 1.35rem;
   position: sticky;
   top: var(--card-top);
-  z-index: calc(200 - var(--card-index));
+  z-index: var(--card-index);
   min-height: calc(100dvh - (var(--card-top) * 2));
   padding: 1.35rem 1.3rem 1.05rem;
   background: linear-gradient(168deg, rgba(241, 249, 244, 0.98), rgba(232, 243, 236, 0.92));
