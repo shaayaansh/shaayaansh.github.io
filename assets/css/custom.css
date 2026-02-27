@@ -327,21 +327,61 @@ body {
   display: block;
 }
 
-.content.is-stacked .stack-card-content {
+.content.is-stacked .stack-card-shell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  gap: 1rem;
+}
+
+.content.is-stacked .stack-card-head {
+  flex: 0 0 auto;
+  padding-bottom: 0.35rem;
+}
+
+.content.is-stacked .stack-card-head h1 {
+  margin: 0;
+}
+
+.content.is-stacked .stack-card-body {
+  flex: 1;
+  min-height: 0;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   display: block;
-  padding: 1.35rem 1.3rem 1.05rem;
+  padding-right: 0.35rem;
   overscroll-behavior: contain;
+  line-height: 1.65;
+}
+
+.content.is-stacked .stack-card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content.is-stacked .stack-card-body::-webkit-scrollbar-track {
+  background: rgba(25, 80, 57, 0.08);
+  border-radius: 999px;
+}
+
+.content.is-stacked .stack-card-body::-webkit-scrollbar-thumb {
+  background: rgba(22, 94, 65, 0.35);
+  border-radius: 999px;
+}
+
+.content.is-stacked .stack-card-body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(22, 94, 65, 0.45) rgba(25, 80, 57, 0.1);
 }
 
 .content.is-stacked .stack-card + .stack-card {
   margin-top: 0;
 }
 
-.content.is-stacked .stack-card h1 {
-  margin-top: 0;
+.content.is-stacked .stack-card-body p,
+.content.is-stacked .stack-card-body li {
+  line-height: 1.65;
 }
 
 .content p,
@@ -372,7 +412,7 @@ body {
 
 .pub-list {
   display: grid;
-  gap: 0.82rem;
+  gap: 1.05rem;
   margin: 0.7rem 0 0.55rem;
 }
 
@@ -476,7 +516,7 @@ body {
 
 .pub-item {
   border-bottom: 1px solid rgba(21, 60, 44, 0.12);
-  padding-bottom: 0.62rem;
+  padding-bottom: 0.9rem;
 }
 
 .pub-item:last-child {
@@ -608,10 +648,17 @@ body {
     z-index: auto !important;
   }
 
-  .content.is-stacked .stack-card-content {
+  .content.is-stacked .stack-card-shell {
     height: auto;
-    overflow: visible;
     padding: 1rem 0.9rem 0.92rem;
+    gap: 0.6rem;
+  }
+
+  .content.is-stacked .stack-card-body {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding-right: 0;
   }
 
   .site-name {

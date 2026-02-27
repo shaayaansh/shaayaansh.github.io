@@ -104,10 +104,20 @@
           const heading = card.querySelector("h1[id]");
           if (heading) card.dataset.sectionId = heading.id;
           card.style.zIndex = String(500 - index);
-          const inner = document.createElement("div");
-          inner.className = "stack-card-content";
-          while (card.firstChild) inner.appendChild(card.firstChild);
-          card.appendChild(inner);
+          const shell = document.createElement("div");
+          shell.className = "stack-card-shell";
+          const head = document.createElement("div");
+          head.className = "stack-card-head";
+          const body = document.createElement("div");
+          body.className = "stack-card-body";
+
+          const firstHeading = card.querySelector("h1");
+          if (firstHeading) head.appendChild(firstHeading);
+          while (card.firstChild) body.appendChild(card.firstChild);
+
+          shell.appendChild(head);
+          shell.appendChild(body);
+          card.appendChild(shell);
           viewport.appendChild(card);
         });
 
