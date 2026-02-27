@@ -12,18 +12,16 @@
   </head>
   <body>
     <div class="page-shell">
-      <header class="hero">
-        <div class="hero-backdrop" aria-hidden="true"></div>
-        <div class="hero-inner">
+      <div class="layout-grid">
+        <aside class="sidebar">
+          <div class="sidebar-card">
           {% if site.logo %}
           <img src="{{ site.logo | relative_url }}" alt="{{ site.author | default: site.title }}" class="profile-image">
           {% endif %}
-
-          <p class="eyebrow">Personal Website</p>
-          <h1>{{ site.title }}</h1>
-          <p class="tagline">{{ site.description }}</p>
-
-          <nav class="social-links" aria-label="Social links">
+            <p class="eyebrow">Personal Website</p>
+            <h1 class="site-name">{{ site.title }}</h1>
+            <p class="tagline">{{ site.description }}</p>
+            <nav class="social-links" aria-label="Social links">
             {% if site.github_username %}
             <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a>
             {% endif %}
@@ -33,17 +31,69 @@
             {% if site.google_scholar %}
             <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
             {% endif %}
-          </nav>
+            </nav>
+
+            <nav class="section-nav" aria-label="Page sections">
+              <a class="section-link" href="#about-me">About Me</a>
+              <a class="section-link" href="#research-interests">Research Interests</a>
+              <a class="section-link" href="#selected-projects">Selected Projects</a>
+              <a class="section-link" href="#publications">Publications</a>
+              <a class="section-link" href="#interests">Interests</a>
+            </nav>
+          </div>
+        </aside>
+
+        <div class="main-column">
+          <main class="content" id="content">
+            {{ content }}
+          </main>
+
+          <footer class="site-footer">
+            <p>© {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}.</p>
+          </footer>
         </div>
-      </header>
-
-      <main class="content" id="content">
-        {{ content }}
-      </main>
-
-      <footer class="site-footer">
-        <p>© {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}.</p>
-      </footer>
+      </div>
     </div>
+
+    <script>
+      (() => {
+        const links = Array.from(document.querySelectorAll(".section-link"));
+        if (!links.length) return;
+
+        const sectionMap = new Map();
+        links.forEach((link) => {
+          const id = link.getAttribute("href")?.replace("#", "");
+          if (!id) return;
+          const section = document.getElementById(id);
+          if (section) sectionMap.set(section, link);
+        });
+
+        const setActive = (activeLink) => {
+          links.forEach((link) => {
+            link.classList.toggle("is-active", link === activeLink);
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (!visible.length) return;
+            const activeLink = sectionMap.get(visible[0].target);
+            if (activeLink) setActive(activeLink);
+          },
+          {
+            rootMargin: "-22% 0px -60% 0px",
+            threshold: [0.15, 0.35, 0.6]
+          }
+        );
+
+        sectionMap.forEach((_, section) => observer.observe(section));
+
+        const fallbackLink = links.find((link) => link.getAttribute("href") === "#about-me") || links[0];
+        setActive(fallbackLink);
+      })();
+    </script>
   </body>
 </html>
