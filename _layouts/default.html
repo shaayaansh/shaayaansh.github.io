@@ -130,6 +130,8 @@
         const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
         const smoothstep = (t) => t * t * (3 - (2 * t));
         const isDesktop = () => window.matchMedia("(min-width: 941px)").matches;
+        let activeScrollableBody = null;
+        let deckSettled = false;
 
         let ticking = false;
         const render = () => {
@@ -143,6 +145,8 @@
               const firstId = cards[0]?.dataset.sectionId;
               if (firstId) setActiveById(firstId);
               spacer.style.height = "0px";
+              activeScrollableBody = null;
+              deckSettled = false;
               return;
             }
 
@@ -191,9 +195,13 @@
           });
 
           const settled = local < 0.03;
+          deckSettled = settled;
           cards.forEach((card, index) => {
             card.classList.toggle("is-active-card", settled && index === phase);
           });
+          activeScrollableBody = settled
+            ? cards[phase]?.querySelector(".stack-card-body") || null
+            : null;
 
           const dominantId = cards[phase]?.dataset.sectionId;
           if (dominantId) setActiveById(dominantId);
@@ -208,6 +216,33 @@
         window.addEventListener("scroll", requestRender, { passive: true });
         window.addEventListener("resize", requestRender);
         window.addEventListener("load", requestRender);
+
+        window.addEventListener(
+          "wheel",
+          (event) => {
+            if (!isDesktop() || !deckSettled || !activeScrollableBody) return;
+
+            const body = activeScrollableBody;
+            const maxScroll = body.scrollHeight - body.clientHeight;
+            if (maxScroll <= 1) return;
+
+            const delta = event.deltaY;
+            if (Math.abs(delta) < 0.1) return;
+
+            const atTop = body.scrollTop <= 0.5;
+            const atBottom = body.scrollTop >= (maxScroll - 0.5);
+            const shouldConsume =
+              (delta > 0 && !atBottom) ||
+              (delta < 0 && !atTop);
+
+            if (!shouldConsume) return;
+
+            event.preventDefault();
+            body.scrollTop = clamp(body.scrollTop + delta, 0, maxScroll);
+          },
+          { passive: false }
+        );
+
         requestRender();
       })();
     </script>
