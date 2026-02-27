@@ -230,7 +230,10 @@ body {
   margin-left: 416px;
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(164deg, rgba(239, 248, 242, 0.93), rgba(228, 241, 232, 0.86));
+  background:
+    radial-gradient(circle at 78% 16%, rgba(110, 175, 143, 0.18) 0%, transparent 32%),
+    radial-gradient(circle at 92% 86%, rgba(86, 150, 120, 0.12) 0%, transparent 34%),
+    linear-gradient(164deg, rgba(239, 248, 242, 0.94), rgba(228, 241, 232, 0.86));
   border-left: 1px solid rgba(23, 72, 53, 0.16);
 }
 
@@ -268,7 +271,7 @@ body {
     "Segoe UI",
     sans-serif;
   font-size: clamp(1.38rem, 2.6vw, 1.82rem);
-  margin: 1.55rem 0 0.78rem;
+  margin: 5.8rem 0 0.9rem;
   font-weight: 300;
   letter-spacing: -0.01em;
   color: #153c2c;
@@ -340,7 +343,7 @@ body {
     "Helvetica Neue",
     "Segoe UI",
     sans-serif;
-  font-size: 1rem;
+  font-size: 1.08rem;
   line-height: 1.42;
   font-weight: 500;
   color: #0f6a49;
