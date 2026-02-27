@@ -120,7 +120,7 @@ body {
 
 .site-name {
   font-family: "Sora", "Avenir Next", sans-serif;
-  margin: 0;
+  margin: 2.6cm 0 0;
   font-size: clamp(1.35rem, 2.4vw, 1.62rem);
   text-align: left;
   letter-spacing: -0.03em;
@@ -424,6 +424,10 @@ body {
     margin-left: 0;
     padding: 0;
     border-left: 0;
+  }
+
+  .site-name {
+    margin-top: 0.8rem;
   }
 }
 
