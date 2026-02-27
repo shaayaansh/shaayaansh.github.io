@@ -348,12 +348,18 @@ body {
   flex: 1;
   min-height: 0;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   display: block;
   padding-right: 0.35rem;
-  overscroll-behavior: contain;
+  overscroll-behavior: auto;
   line-height: 1.65;
+  pointer-events: none;
+}
+
+.content.is-stacked .stack-card.is-active-card .stack-card-body {
+  overflow-y: auto;
+  pointer-events: auto;
 }
 
 .content.is-stacked .stack-card-body::-webkit-scrollbar {
@@ -659,6 +665,7 @@ body {
     min-height: 0;
     overflow: visible;
     padding-right: 0;
+    pointer-events: auto;
   }
 
   .site-name {

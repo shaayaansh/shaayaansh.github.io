@@ -190,6 +190,11 @@
             card.style.opacity = String(opacity);
           });
 
+          const settled = local < 0.03;
+          cards.forEach((card, index) => {
+            card.classList.toggle("is-active-card", settled && index === phase);
+          });
+
           const dominantId = cards[phase]?.dataset.sectionId;
           if (dominantId) setActiveById(dominantId);
         };
