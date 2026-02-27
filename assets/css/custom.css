@@ -294,24 +294,36 @@ body {
   width: min(980px, calc(100% - 2.2rem));
   margin: 0 auto;
   position: relative;
-  padding-bottom: 24vh;
+}
+
+.content.is-stacked .deck-viewport {
+  position: sticky;
+  top: 1.2rem;
+  height: calc(100dvh - 2.4rem);
+}
+
+.content.is-stacked .deck-spacer {
+  height: calc(var(--card-count, 1) * 82dvh);
 }
 
 .content.is-stacked .stack-card {
-  --card-top: 1.35rem;
-  position: sticky;
-  top: var(--card-top);
-  z-index: var(--card-index);
-  min-height: calc(100dvh - (var(--card-top) * 2));
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   padding: 1.35rem 1.3rem 1.05rem;
-  background: linear-gradient(168deg, rgba(241, 249, 244, 0.98), rgba(232, 243, 236, 0.92));
+  min-height: 100%;
+  background: linear-gradient(168deg, rgba(241, 249, 244, 0.985), rgba(232, 243, 236, 0.93));
   border: 1px solid rgba(18, 67, 47, 0.2);
-  border-radius: 4px;
-  box-shadow: 0 20px 38px rgba(6, 24, 16, 0.25);
+  border-radius: 14px;
+  box-shadow:
+    0 24px 44px rgba(6, 24, 16, 0.28),
+    0 2px 0 rgba(255, 255, 255, 0.5) inset;
+  transform-origin: 50% 10%;
+  will-change: transform, opacity;
 }
 
 .content.is-stacked .stack-card + .stack-card {
-  margin-top: -72dvh;
+  margin-top: 0;
 }
 
 .content.is-stacked .stack-card h1 {
@@ -557,7 +569,15 @@ body {
 
   .content.is-stacked .cards-stack {
     width: 100%;
-    padding-bottom: 0;
+  }
+
+  .content.is-stacked .deck-viewport {
+    position: static;
+    height: auto;
+  }
+
+  .content.is-stacked .deck-spacer {
+    display: none;
   }
 
   .content.is-stacked .stack-card,
@@ -565,9 +585,13 @@ body {
     position: relative;
     top: auto;
     min-height: 0;
+    inset: auto;
     margin-top: 0;
     margin-bottom: 0.85rem;
     padding: 1rem 0.9rem 0.92rem;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: auto !important;
   }
 
   .site-name {
