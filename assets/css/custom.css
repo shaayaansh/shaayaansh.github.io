@@ -35,7 +35,7 @@ body {
     radial-gradient(circle at 8% 8%, rgba(152, 206, 169, 0.3) 0%, transparent 28%),
     radial-gradient(circle at 88% 13%, rgba(106, 171, 135, 0.34) 0%, transparent 30%),
     radial-gradient(circle at 50% 100%, rgba(189, 220, 200, 0.2) 0%, transparent 34%),
-    linear-gradient(135deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+    linear-gradient(90deg, #0a241b 0%, #103126 35%, #1a5139 100%);
   min-height: 100vh;
   background-attachment: fixed;
 }
@@ -340,7 +340,7 @@ body {
     "Helvetica Neue",
     "Segoe UI",
     sans-serif;
-  font-size: 0.83rem;
+  font-size: 1rem;
   line-height: 1.42;
   font-weight: 500;
   color: #0f6a49;
