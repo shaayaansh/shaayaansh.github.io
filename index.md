@@ -80,7 +80,7 @@ Full list on [Google Scholar](https://scholar.google.com/citations?user=o0OKC_oA
 
 # Teaching
 {: #teaching}
-I taught **Natural Language Processing (Computational Linguistics)** in **Spring 2026** at **Hunter College, City University of New York**.
+Fall 2026: Natural Language Processing at Hunter College, City University of New York
 
 # Interests
 {: #interests}
