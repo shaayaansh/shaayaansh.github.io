@@ -38,9 +38,10 @@ body {
 }
 
 .page-shell {
-  width: min(1200px, calc(100% - 2.4rem));
-  margin: 1.5rem auto;
+  width: 100%;
+  margin: 0;
   position: relative;
+  min-height: 100vh;
 }
 
 .page-shell::before,
@@ -70,17 +71,21 @@ body {
 }
 
 .layout-grid {
-  display: grid;
-  grid-template-columns: 310px 1fr;
-  gap: 1.3rem;
-  align-items: start;
+  display: block;
   position: relative;
   z-index: 1;
+  min-height: 100vh;
 }
 
 .sidebar {
-  position: sticky;
-  top: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  padding: 1rem;
+  z-index: 3;
+  overflow-y: auto;
 }
 
 .sidebar-card {
@@ -91,6 +96,7 @@ body {
     linear-gradient(160deg, rgba(236, 248, 241, 0.88), rgba(226, 243, 232, 0.72));
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-lg);
+  min-height: calc(100vh - 2rem);
 }
 
 .profile-image {
@@ -193,6 +199,8 @@ body {
 
 .main-column {
   min-width: 0;
+  margin-left: 320px;
+  padding: 1.1rem 1.1rem 0.8rem;
 }
 
 .content {
@@ -267,17 +275,16 @@ body {
 }
 
 @media (max-width: 940px) {
-  .layout-grid {
-    grid-template-columns: 1fr;
-    gap: 0.92rem;
-  }
-
   .sidebar {
     position: static;
+    width: auto;
+    padding: 0.8rem 0.8rem 0;
+    overflow-y: visible;
   }
 
   .sidebar-card {
     padding: 1rem 0.9rem;
+    min-height: auto;
   }
 
   .social-links {
@@ -287,14 +294,14 @@ body {
   .section-nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .main-column {
+    margin-left: 0;
+    padding: 0.8rem;
+  }
 }
 
 @media (max-width: 640px) {
-  .page-shell {
-    width: min(1200px, calc(100% - 1.2rem));
-    margin: 0.8rem auto;
-  }
-
   .social-links {
     grid-template-columns: 1fr;
   }
