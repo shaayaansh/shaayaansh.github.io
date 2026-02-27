@@ -298,25 +298,27 @@ body {
 
 .content.is-stacked .deck-viewport {
   position: sticky;
-  top: 1.2rem;
-  height: calc(100dvh - 2.4rem);
+  top: 0;
+  height: 100dvh;
 }
 
 .content.is-stacked .deck-spacer {
-  height: calc(var(--card-count, 1) * 82dvh);
+  height: 160dvh;
 }
 
 .content.is-stacked .stack-card {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--deck-card-height, 68dvh);
   z-index: 1;
   padding: 1.35rem 1.3rem 1.05rem;
-  min-height: 100%;
   background: linear-gradient(168deg, rgba(241, 249, 244, 0.985), rgba(232, 243, 236, 0.93));
   border: 1px solid rgba(18, 67, 47, 0.2);
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow:
-    0 24px 44px rgba(6, 24, 16, 0.28),
+    0 24px 44px rgba(6, 24, 16, 0.3),
     0 2px 0 rgba(255, 255, 255, 0.5) inset;
   transform-origin: 50% 10%;
   will-change: transform, opacity;
