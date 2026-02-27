@@ -1,159 +1,309 @@
-/* Enhanced styling for personal website */
-
-/* Header improvements */
-.page-header {
-  padding: 3rem 1rem;
+:root {
+  --bg: #f5efe4;
+  --bg-alt: #e8dcc8;
+  --surface: #fffaf3;
+  --surface-strong: #fffdf9;
+  --text: #1d2128;
+  --muted: #57606f;
+  --accent: #0f766e;
+  --accent-strong: #0b5f59;
+  --accent-soft: #d7f4ee;
+  --line: #d8c9b0;
+  --radius: 20px;
+  --shadow: 0 20px 40px rgba(21, 24, 28, 0.12);
+  --shadow-soft: 0 12px 24px rgba(21, 24, 28, 0.08);
 }
 
-.header-content {
-  max-width: 64rem;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Serif 4", Georgia, serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at -8% -8%, rgba(247, 210, 138, 0.75) 0%, transparent 40%),
+    radial-gradient(circle at 110% 0%, rgba(127, 216, 195, 0.72) 0%, transparent 37%),
+    radial-gradient(circle at 50% 100%, rgba(227, 165, 103, 0.18) 0%, transparent 45%),
+    repeating-linear-gradient(
+      -22deg,
+      rgba(255, 255, 255, 0.07) 0px,
+      rgba(255, 255, 255, 0.07) 8px,
+      transparent 8px,
+      transparent 18px
+    ),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  line-height: 1.7;
+}
+
+.page-shell {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-shell::before,
+.page-shell::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(24px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-shell::before {
+  width: 270px;
+  height: 270px;
+  background: rgba(255, 222, 172, 0.4);
+  top: 16%;
+  right: -120px;
+}
+
+.page-shell::after {
+  width: 220px;
+  height: 220px;
+  background: rgba(110, 191, 170, 0.26);
+  bottom: 14%;
+  left: -100px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 3.8rem 1.25rem 2.7rem;
+  z-index: 1;
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(130deg, rgba(255, 250, 242, 0.45), rgba(243, 229, 209, 0.8));
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.66), rgba(255, 252, 245, 0.44));
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+  padding: 1.45rem 1.2rem 1.4rem;
+  animation: rise-in 700ms ease-out;
 }
 
 .profile-image {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1.5rem;
   object-fit: cover;
+  border: 6px solid rgba(255, 253, 249, 0.98);
+  box-shadow: var(--shadow);
 }
 
-.project-name {
-  margin-top: 1rem;
-  font-size: 2.5rem;
+.eyebrow {
+  margin: 1.4rem 0 0.6rem;
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.82rem;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
 }
 
-.project-tagline {
-  opacity: 0.9;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+h1,
+h2,
+h3 {
+  font-family: "Sora", "Avenir Next", sans-serif;
+  letter-spacing: -0.02em;
 }
 
-/* Social buttons */
-.header-links {
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 0.85rem auto 0;
+  max-width: 660px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+}
+
+.social-links {
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 1.7rem;
 }
 
-.btn-social {
-  display: inline-block;
-  padding: 0.6rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 0.3rem;
-  color: rgba(255, 255, 255, 0.9);
+.social-links a {
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-  background: rgba(255, 255, 255, 0.1);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  box-shadow: 0 8px 18px rgba(11, 95, 89, 0.28);
+  transition: transform 180ms ease, filter 180ms ease;
 }
 
-.btn-social:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+.social-links a:hover,
+.social-links a:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
 }
 
-/* Content improvements */
-.main-content {
-  max-width: 64rem;
-  padding: 2rem 1rem 3rem;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.6;
+.content {
+  max-width: 920px;
+  margin: 1.4rem auto 0;
+  padding: 0 1.1rem 2.2rem;
+  position: relative;
+  z-index: 1;
+  animation: rise-in 850ms ease-out;
 }
 
-.main-content h1 {
-  color: #159957;
-  font-size: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #159957;
-  padding-bottom: 0.5rem;
+.content h1 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin: 2.2rem 0 1rem;
+  border: 0;
+  padding-bottom: 0;
+  position: relative;
 }
 
-.main-content h2 {
-  color: #159957;
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
+.content p {
+  margin: 0.55rem 0;
 }
 
-.main-content a {
-  color: #1e6bb8;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.2s ease;
+.content a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
-.main-content a:hover {
-  border-bottom: 1px solid #1e6bb8;
+.content ul {
+  margin: 0.8rem 0 0.9rem;
+  padding-left: 1.2rem;
 }
 
-/* Lists */
-.main-content ul {
-  padding-left: 1.5rem;
-  margin: 1rem 0;
+.content li {
+  margin-bottom: 0.45rem;
 }
 
-.main-content ul li {
-  margin-bottom: 0.5rem;
+.content > * {
+  background:
+    linear-gradient(180deg, var(--surface-strong), var(--surface));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 1.2rem 1.2rem;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
-/* Publications section styling */
-.main-content ul li a {
-  font-weight: 500;
+.content > *:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: #cdb68f;
 }
 
-/* Responsive design */
-@media screen and (max-width: 64em) {
-  .project-name {
-    font-size: 2rem;
+.content > h1 {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.content > h1::after {
+  content: "";
+  display: block;
+  width: clamp(95px, 18vw, 160px);
+  height: 5px;
+  margin-top: 0.38rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d88944, var(--accent));
+}
+
+.site-footer {
+  padding: 1.4rem 1rem 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 2.2rem;
+  }
+
   .profile-image {
-    width: 120px;
-    height: 120px;
+    width: 122px;
+    height: 122px;
+    border-width: 5px;
   }
-}
 
-@media screen and (max-width: 42em) {
-  .project-name {
-    font-size: 1.5rem;
+  .hero-inner {
+    padding: 1rem 0.9rem 1.05rem;
   }
-  
-  .project-tagline {
-    font-size: 1rem;
+
+  .content {
+    margin-top: 0.4rem;
+    padding-bottom: 1.3rem;
   }
-  
-  .profile-image {
-    width: 100px;
-    height: 100px;
+
+  .content > * {
+    padding: 0.95rem;
   }
-  
-  .header-links {
-    flex-direction: column;
+
+  .social-links {
     align-items: stretch;
+    flex-direction: column;
+    gap: 0.55rem;
   }
-  
-  .btn-social {
+
+  .social-links a {
     width: 100%;
   }
 }
 
-/* Footer */
-.site-footer {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #eff0f1;
-  text-align: center;
-  color: #606c71;
-  font-size: 0.9rem;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
