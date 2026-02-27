@@ -15,6 +15,32 @@ My current research explores opinionated and persuasive language in news. I also
 
 I am especially interested in machine learning and large language models, with emphasis on robust domain adaptation for practical NLP systems.
 
+# Experience
+{: #experience}
+<div class="experience-list">
+  <article class="experience-item">
+    <img class="experience-logo" src="https://logo.clearbit.com/prooftrading.com" alt="Proof Trading logo">
+    <div class="experience-content">
+      <p class="experience-role">Proof Trading - Data Scientist Intern</p>
+      <p class="experience-date">Summer 2022</p>
+    </div>
+  </article>
+  <article class="experience-item">
+    <img class="experience-logo" src="https://logo.clearbit.com/truveta.com" alt="Truveta logo">
+    <div class="experience-content">
+      <p class="experience-role">Truveta - Machine Learning Engineer Intern</p>
+      <p class="experience-date">Summer 2025</p>
+    </div>
+  </article>
+  <article class="experience-item">
+    <img class="experience-logo" src="https://logo.clearbit.com/truveta.com" alt="Truveta logo">
+    <div class="experience-content">
+      <p class="experience-role">Truveta - Machine Learning Engineer</p>
+      <p class="experience-date">Since March 2026</p>
+    </div>
+  </article>
+</div>
+
 # Selected Projects
 {: #selected-projects}
 - Detecting Subjective Language in News

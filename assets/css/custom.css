@@ -323,6 +323,55 @@ body {
   margin: 0.7rem 0 0.55rem;
 }
 
+.experience-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0.65rem 0 0.6rem;
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+  border-bottom: 1px solid rgba(21, 60, 44, 0.12);
+  padding-bottom: 0.66rem;
+}
+
+.experience-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.experience-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(21, 60, 44, 0.12);
+  padding: 0.25rem;
+  flex-shrink: 0;
+}
+
+.experience-content {
+  min-width: 0;
+}
+
+.experience-role {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.35;
+  color: #134b36;
+  font-weight: 500;
+}
+
+.experience-date {
+  margin: 0.14rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: rgba(22, 50, 38, 0.62);
+}
+
 .pub-item {
   border-bottom: 1px solid rgba(21, 60, 44, 0.12);
   padding-bottom: 0.62rem;
