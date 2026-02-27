@@ -23,12 +23,16 @@ I am especially interested in machine learning and large language models, with e
 
 # Publications
 {: #publications}
-- [Subjectivity Detection in News Domain using Large Language Models](https://aclanthology.org/2024.wassa-1.17.pdf) (2024)
-- Analysis of Propaganda in Tweets From Politically Biased Sources (2024)
-- [Defining and Controlling Information Leakage in US Equities Trading](https://petsymposium.org/popets/2024/popets-2024-0054.pdf) (2024)
-- [GC-Hunter at Image-Arg Shared Task: Multi-Modal Stance and Persuasiveness Learning](https://aclanthology.org/2023.argmining-1.17.pdf) (2023)
+- [Subjectivity Detection in English News using Large Language Models](https://aclanthology.org/2024.wassa-1.17/) (2024)
+- [Is It Safe to Tell Your Story? Towards Achieving Privacy for Sensitive Narratives](https://aclanthology.org/2024.wnu-1.7/) (2024)
+- [Defining and Controlling Information Leakage in US Equities Trading](https://petsymposium.org/popets/2024/popets-2024-0054.php) (2024)
+- [GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning](https://aclanthology.org/2023.argmining-1.17/) (2023)
 
 Full list on [Google Scholar](https://scholar.google.com/citations?user=o0OKC_oAAAAJ).
+
+# Teaching
+{: #teaching}
+I taught **Natural Language Processing (Computational Linguistics)** in **Spring 2026** at **Hunter College, City University of New York**.
 
 # Interests
 {: #interests}
