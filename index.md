@@ -23,10 +23,16 @@ I am especially interested in machine learning and large language models, with e
 
 # Publications
 {: #publications}
-- [Subjectivity Detection in English News using Large Language Models](https://aclanthology.org/2024.wassa-1.17/) (2024)
-- [Is It Safe to Tell Your Story? Towards Achieving Privacy for Sensitive Narratives](https://aclanthology.org/2024.wnu-1.7/) (2024)
-- [Defining and Controlling Information Leakage in US Equities Trading](https://petsymposium.org/popets/2024/popets-2024-0054.php) (2024)
-- [GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning](https://aclanthology.org/2023.argmining-1.17/) (2023)
+- Story2MIDI: Emotionally Aligned Music Generation from Text
+- Chord-conditioned melody and bass generation
+- Personalized Author Obfuscation with Large Language Models
+- Analysis of Propaganda in Tweets From Politically Biased Sources
+- Propasafe: A bert-based offline tool for propaganda detection
+- Finding Common Patterns in Domestic Violence Stories Posted on Reddit
+- Is it safe to tell your story? towards achieving privacy for sensitive narratives
+- Subjectivity Detection in English News Using Large Language Models
+- Defining and controlling information leakage in us equities trading
+- GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning
 
 Full list on [Google Scholar](https://scholar.google.com/citations?user=o0OKC_oAAAAJ).
 
