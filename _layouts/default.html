@@ -61,6 +61,34 @@
 
     <script>
       (() => {
+        const content = document.getElementById("content");
+        if (content) {
+          const children = Array.from(content.children);
+          const cards = [];
+          let currentCard = null;
+
+          children.forEach((node) => {
+            if (node.tagName === "H1") {
+              currentCard = document.createElement("section");
+              currentCard.className = "stack-card";
+              cards.push(currentCard);
+            }
+            if (currentCard) currentCard.appendChild(node);
+          });
+
+          if (cards.length) {
+            const stack = document.createElement("div");
+            stack.className = "cards-stack";
+            cards.forEach((card, index) => {
+              card.style.setProperty("--card-index", index + 1);
+              stack.appendChild(card);
+            });
+            content.innerHTML = "";
+            content.classList.add("is-stacked");
+            content.appendChild(stack);
+          }
+        }
+
         const links = Array.from(document.querySelectorAll(".section-link"));
         if (!links.length) return;
 

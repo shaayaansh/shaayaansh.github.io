@@ -233,19 +233,19 @@ body {
   padding: 0;
   min-height: 100dvh;
   background:
-    radial-gradient(circle at 78% 16%, rgba(110, 175, 143, 0.18) 0%, transparent 32%),
-    radial-gradient(circle at 92% 86%, rgba(86, 150, 120, 0.12) 0%, transparent 34%),
-    linear-gradient(164deg, rgba(239, 248, 242, 0.94), rgba(228, 241, 232, 0.86));
+    radial-gradient(circle at 82% 14%, rgba(101, 170, 136, 0.26) 0%, transparent 30%),
+    radial-gradient(circle at 94% 90%, rgba(71, 142, 109, 0.2) 0%, transparent 36%),
+    linear-gradient(90deg, #0b251c 0%, #133a2b 50%, #1c5a40 100%);
   border-left: 1px solid rgba(23, 72, 53, 0.16);
 }
 
 .content {
-  padding: 1.35rem 1.35rem 1rem;
+  padding: 1.2rem 0 1.3rem;
   border-radius: 0;
   border: 0;
   background: transparent;
   box-shadow: none;
-  min-height: calc(100vh - 68px);
+  min-height: 0;
   font-family:
     "SF Pro Text",
     "SF Pro Display",
@@ -273,7 +273,7 @@ body {
     "Segoe UI",
     sans-serif;
   font-size: clamp(1.38rem, 2.6vw, 1.82rem);
-  margin: 5.8rem 0 0.9rem;
+  margin: 2.3rem 0 0.9rem;
   font-weight: 300;
   letter-spacing: -0.01em;
   color: #153c2c;
@@ -291,6 +291,34 @@ body {
   border-radius: 999px;
   margin-top: 0.36rem;
   background: linear-gradient(90deg, #2ea36f, #176646);
+}
+
+.content.is-stacked .cards-stack {
+  width: min(980px, calc(100% - 2.2rem));
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 24vh;
+}
+
+.content.is-stacked .stack-card {
+  --card-top: 1.35rem;
+  position: sticky;
+  top: var(--card-top);
+  z-index: calc(200 - var(--card-index));
+  min-height: calc(100dvh - (var(--card-top) * 2));
+  padding: 1.35rem 1.3rem 1.05rem;
+  background: linear-gradient(168deg, rgba(241, 249, 244, 0.98), rgba(232, 243, 236, 0.92));
+  border: 1px solid rgba(18, 67, 47, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 20px 38px rgba(6, 24, 16, 0.25);
+}
+
+.content.is-stacked .stack-card + .stack-card {
+  margin-top: -72dvh;
+}
+
+.content.is-stacked .stack-card h1 {
+  margin-top: 0;
 }
 
 .content p,
@@ -493,7 +521,7 @@ body {
 
 .site-footer {
   text-align: center;
-  color: rgba(28, 70, 52, 0.82);
+  color: rgba(223, 244, 232, 0.9);
   font-size: 0.88rem;
   margin-top: 0;
   padding: 0.85rem 0.4rem 1rem;
@@ -524,6 +552,25 @@ body {
     margin-left: 0;
     padding: 0;
     border-left: 0;
+  }
+
+  .content.is-stacked {
+    padding: 0.85rem 0.8rem;
+  }
+
+  .content.is-stacked .cards-stack {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .content.is-stacked .stack-card,
+  .content.is-stacked .stack-card + .stack-card {
+    position: relative;
+    top: auto;
+    min-height: 0;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding: 1rem 0.9rem 0.92rem;
   }
 
   .site-name {
