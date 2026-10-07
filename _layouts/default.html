@@ -3,250 +3,46 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{{ page.title }}{% if page.title %} · {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
   </head>
-  <body>
+  <body class="is-page">
     <div class="page-shell">
-      <div class="layout-grid">
-        <aside class="sidebar">
-          <div class="sidebar-card">
-          {% if site.logo %}
-          <img src="{{ site.logo | relative_url }}" alt="{{ site.author | default: site.title }}" class="profile-image">
-          {% endif %}
-            <h1 class="site-name">{{ site.title }}</h1>
-            {% if site.email %}
-            <p class="site-email"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-            {% endif %}
-            <p class="tagline">{{ site.description }}</p>
-            <nav class="social-links" aria-label="Social links">
-            {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-            {% endif %}
-            {% if site.linkedin_username %}
-            <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            {% endif %}
-            {% if site.google_scholar %}
-            <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            {% endif %}
-            </nav>
+      <header class="page-top">
+        <a class="home-chip" href="{{ '/' | relative_url }}">
+          <img src="{{ site.logo | relative_url }}" alt="" class="home-chip-photo">
+          <span class="home-chip-text">
+            <span class="home-chip-name">{{ site.author | default: site.title }}</span>
+            <span class="home-chip-back">← back to the hub</span>
+          </span>
+        </a>
 
-            <nav class="section-nav" aria-label="Page sections">
-              <a class="section-link" href="#about-me">About Me</a>
-              <a class="section-link" href="#research-interests">Research Interests</a>
-              <a class="section-link" href="#experience">Experience</a>
-              <a class="section-link" href="#selected-projects">Selected Projects</a>
-              <a class="section-link" href="#publications">Publications</a>
-              <a class="section-link" href="#teaching">Teaching</a>
-              <a class="section-link" href="#interests">Interests</a>
-            </nav>
-          </div>
-        </aside>
+        <nav class="page-nav" aria-label="Sections">
+          {% for item in site.data.sections %}
+          <a class="page-nav-link{% if page.url == item.url %} is-current{% endif %}" href="{{ item.url | relative_url }}">{{ item.short | default: item.title }}</a>
+          {% endfor %}
+        </nav>
+      </header>
 
-        <div class="main-column">
-          <main class="content" id="content">
+      <main class="page-main">
+        <article class="page-card">
+          <p class="page-kicker">{{ page.kicker | default: site.title }}</p>
+          <h1 class="page-title">{{ page.title }}</h1>
+          {% if page.lede %}<p class="page-lede">{{ page.lede }}</p>{% endif %}
+          <div class="page-body">
             {{ content }}
-          </main>
+          </div>
+        </article>
 
-          <footer class="site-footer">
-            <p>© {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}.</p>
-          </footer>
-        </div>
-      </div>
+        <footer class="page-foot">
+          <a class="page-foot-home" href="{{ '/' | relative_url }}">← Back to the hub</a>
+          <p class="page-copyright">© {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}</p>
+        </footer>
+      </main>
     </div>
-
-    <script>
-      (() => {
-        const links = Array.from(document.querySelectorAll(".section-link"));
-        const linkById = new Map();
-        links.forEach((link) => {
-          const id = link.getAttribute("href")?.replace("#", "");
-          if (id) linkById.set(id, link);
-        });
-
-        const setActiveById = (id) => {
-          if (!links.length || !id) return;
-          links.forEach((link) => {
-            link.classList.toggle("is-active", linkById.get(id) === link);
-          });
-        };
-
-        const content = document.getElementById("content");
-        if (!content) return;
-
-        const children = Array.from(content.children);
-        const cards = [];
-        let currentCard = null;
-
-        children.forEach((node) => {
-          if (node.tagName === "H1") {
-            currentCard = document.createElement("section");
-            currentCard.className = "stack-card";
-            cards.push(currentCard);
-          }
-          if (currentCard) currentCard.appendChild(node);
-        });
-
-        if (!cards.length) return;
-
-        const stack = document.createElement("div");
-        stack.className = "cards-stack";
-        const viewport = document.createElement("div");
-        viewport.className = "deck-viewport";
-        const spacer = document.createElement("div");
-        spacer.className = "deck-spacer";
-
-        cards.forEach((card, index) => {
-          const heading = card.querySelector("h1[id]");
-          if (heading) card.dataset.sectionId = heading.id;
-          card.style.zIndex = String(500 - index);
-          const shell = document.createElement("div");
-          shell.className = "stack-card-shell";
-          const head = document.createElement("div");
-          head.className = "stack-card-head";
-          const body = document.createElement("div");
-          body.className = "stack-card-body";
-
-          const firstHeading = card.querySelector("h1");
-          if (firstHeading) head.appendChild(firstHeading);
-          while (card.firstChild) body.appendChild(card.firstChild);
-
-          shell.appendChild(head);
-          shell.appendChild(body);
-          card.appendChild(shell);
-          viewport.appendChild(card);
-        });
-
-        stack.appendChild(viewport);
-        stack.appendChild(spacer);
-        content.innerHTML = "";
-        content.classList.add("is-stacked");
-        content.appendChild(stack);
-
-        const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-        const smoothstep = (t) => t * t * (3 - (2 * t));
-        const isDesktop = () => window.matchMedia("(min-width: 941px)").matches;
-        let activeScrollableBody = null;
-        let deckSettled = false;
-
-        let ticking = false;
-        const render = () => {
-          ticking = false;
-
-          if (!isDesktop()) {
-            cards.forEach((card) => {
-                card.style.transform = "";
-                card.style.opacity = "";
-              });
-              const firstId = cards[0]?.dataset.sectionId;
-              if (firstId) setActiveById(firstId);
-              spacer.style.height = "0px";
-              activeScrollableBody = null;
-              deckSettled = false;
-              return;
-            }
-
-          const vh = window.innerHeight;
-          const cardHeight = vh * 0.7;
-          const centerY = (vh - cardHeight) / 2;
-          const step = cardHeight * 1.06;
-          const maxProgress = (cards.length - 1) + 0.999;
-          const rawProgress = Math.max(0, -stack.getBoundingClientRect().top) / step;
-          const progress = clamp(rawProgress, 0, maxProgress);
-          const phase = Math.min(cards.length - 1, Math.floor(progress));
-          const local = clamp(progress - phase, 0, 1);
-          const eased = smoothstep(local);
-          const totalTravel = ((cards.length - 1) * step) + vh;
-          stack.style.setProperty("--deck-card-height", `${cardHeight}px`);
-          stack.style.setProperty("--deck-spacer-height", `${Math.max(vh, totalTravel)}px`);
-
-          cards.forEach((card, index) => {
-            let x = 0;
-            let y = 0;
-            let scale = 1;
-            let opacity = 1;
-            const depthLayer = Math.max(0, index - phase);
-
-            if (index < phase) {
-              y = -cardHeight - 130;
-              x = 0;
-              scale = 0.98;
-            } else if (index === phase) {
-              y = (-(cardHeight + 130)) * eased;
-              x = 0;
-              scale = 1 - (0.015 * eased);
-            } else if (index === phase + 1) {
-              y = 28 * (1 - eased);
-              x = -22;
-              scale = 0.975 + (0.025 * eased);
-            } else {
-              const depth = index - (phase + 1);
-              y = 28 + (depth * 18);
-              x = -22 * depthLayer;
-              scale = Math.max(0.88, 0.975 - (depth * 0.03));
-              opacity = Math.max(0.65, 1 - (depth * 0.1));
-            }
-
-            card.style.transform = `translate3d(${x}px, ${centerY + y}px, 0) scale(${scale})`;
-            card.style.opacity = String(opacity);
-          });
-
-          const settled = local < 0.03;
-          deckSettled = settled;
-          cards.forEach((card, index) => {
-            card.classList.toggle("is-active-card", index === phase);
-            card.classList.toggle("is-settled-card", settled && index === phase);
-          });
-          activeScrollableBody = settled
-            ? cards[phase]?.querySelector(".stack-card-body") || null
-            : null;
-
-          const dominantId = cards[phase]?.dataset.sectionId;
-          if (dominantId) setActiveById(dominantId);
-        };
-
-        const requestRender = () => {
-          if (ticking) return;
-          ticking = true;
-          window.requestAnimationFrame(render);
-        };
-
-        window.addEventListener("scroll", requestRender, { passive: true });
-        window.addEventListener("resize", requestRender);
-        window.addEventListener("load", requestRender);
-
-        window.addEventListener(
-          "wheel",
-          (event) => {
-            if (!isDesktop() || !deckSettled || !activeScrollableBody) return;
-
-            const body = activeScrollableBody;
-            const maxScroll = body.scrollHeight - body.clientHeight;
-            if (maxScroll <= 1) return;
-
-            const delta = event.deltaY;
-            if (Math.abs(delta) < 0.1) return;
-
-            const atTop = body.scrollTop <= 0.5;
-            const atBottom = body.scrollTop >= (maxScroll - 0.5);
-            const shouldConsume =
-              (delta > 0 && !atBottom) ||
-              (delta < 0 && !atTop);
-
-            if (!shouldConsume) return;
-
-            event.preventDefault();
-            body.scrollTop = clamp(body.scrollTop + delta, 0, maxScroll);
-          },
-          { passive: false }
-        );
-
-        requestRender();
-      })();
-    </script>
   </body>
 </html>
